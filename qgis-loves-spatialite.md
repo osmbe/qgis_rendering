@@ -56,3 +56,8 @@ http://www.gdal.org/drv_osm.html
 ## Alternative: a selection of data for a larger area
 
 You can use Overpass Turbo to make a selection of data from a very large area. This approach is explained in the "Retreat to QGIS" section in [this article](http://www.openstreetmap.org/user/joost%20schouppe/diary/38103).
+
+
+## I want a background
+
+You can very easily add a background map without a need to do a lot of rendering yourself. You can do this, for example, with the Web>Open Layers plugin.
