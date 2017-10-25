@@ -38,8 +38,7 @@ Open QGIS and click on the feather icon. First connect to your database. Then yo
 
 For example, this query will give you all the "slow roads":
 
-``` "highway" = 'bridleway'  OR "highway" = 'cycleway'  OR "highway" = 'footway'
-  OR "highway" = 'path'  OR "highway" = 'pedestrian'  OR "highway" = 'track' ``` 
+``` "highway" = 'bridleway'  OR "highway" = 'cycleway'  OR "highway" = 'footway'  OR "highway" = 'path'  OR "highway" = 'pedestrian'  OR "highway" = 'track' ```
 
 Tags that aren't made available as a column are in "other tags". You can use them like this:
 
