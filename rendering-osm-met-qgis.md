@@ -1,5 +1,7 @@
 # Rendering OSM met QGIS
 
+> Author : [brusspi](https://github.com/brusspi)
+
 ## 1/ download gegevens
 
 - <http://download.geofabrik.de/europe/belgium.html> --- gans België
