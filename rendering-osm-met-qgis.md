@@ -28,23 +28,27 @@ create extension hstore;
 osm2pgsql -c -s -k -d osm -U postgres -H localhost -S C:\Users\pieter\Documents\GIS\_werkmap\osm\default.style C:\Users\pieter\Documents\GIS\_werkmap\osm\belgium-latest.osm.pbf
 ```
 
-- Maak in QGIS connectie met database via 
+- Maak in QGIS connectie met database via ![](images/rendering-osm-met-qgis-1.png)
 
 ### OSMdownloader
 
 via plugin *OSMdownloader* (te installeren via QGIS > pluginmanager) download je rechtstreeks een gebied uit de centrale OSM-database.
 
-- selecteer gebied met .  Een achtergrondkaart is handig/nodig
+- selecteer gebied met ![](images/rendering-osm-met-qgis-2.png).  Een achtergrondkaart is handig/nodig
+
+![](images/rendering-osm-met-qgis-3.png)
 
 - vink *load layer* aan om direct in te laden. Indien je dit vergat (of nadien) kan je het bestand gewoon in je openstaande QGIS-project slepen.
 
-- selecteer de gewenste gegevenstypes: 
+- selecteer de gewenste gegevenstypes:
+
+![](images/rendering-osm-met-qgis-4.png)
 
 - sla indien gewenst de lagen op in een ander formaat (geojson, shapefile, etc).  Dit kan nodig zijn indien je extra kolommen wilt toevoegen met gegevens uit other\_tags.  Dit kan makkelijk met volgende query:
 
 ```
 case
-when strpos(other_tags, '"ref"')> 0	
+when strpos(other_tags, '"ref"')> 0
 then		
 left(		
 right(other_tags, length(other_tags)-strpos(other_tags, '"ref"=>"')-(length('"ref"=>"')-1)),
@@ -62,6 +66,8 @@ end
 
 Je kan een stijl(.qml) inladen via *laageigenschappen* > tabblad stijl.  Links onderaan klikken op stijl > stijl laden.
 
+![](images/rendering-osm-met-qgis-5.png)
+
 ## 4/ Stijl maken/aanpassen
 
 Een stijl baseert zich op een waarde in een bepaalde kolom.  Welke kolommen er beschikbaar zijn, hangt af van de manier van downloaden.  Via osm2pgsql (PostGis) worden meer kolommen aangemaakt dan via de download met de plugin of bbbike.org.
@@ -70,7 +76,7 @@ Je kan zelf kolommen extraheren uit de kolom other_tags met behulp van onderstaa
 
 ```
 case
-when strpos(other_tags, '"ref"')> 0	
+when strpos(other_tags, '"ref"')> 0
 then		
 left(		
 right(other_tags, length(other_tags)-strpos(other_tags, '"ref"=>"')-(length('"ref"=>"')-1)),
@@ -86,4 +92,3 @@ end
 
 - .qml
 - <https://github.com/akbargumbira/qgis_resources_sharing>
-
