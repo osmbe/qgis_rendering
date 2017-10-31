@@ -46,19 +46,6 @@ via plugin *OSMdownloader* (te installeren via QGIS > pluginmanager) download je
 
 - sla indien gewenst de lagen op in een ander formaat (geojson, shapefile, etc).  Dit kan nodig zijn indien je extra kolommen wilt toevoegen met gegevens uit other\_tags.  Dit kan makkelijk met volgende query:
 
-```
-case
-when strpos(other_tags, '"ref"')> 0
-then		
-left(		
-right(other_tags, length(other_tags)-strpos(other_tags, '"ref"=>"')-(length('"ref"=>"')-1)),
-strpos(right(other_tags, length(other_tags) - strpos(other_tags, '"ref"=>"') - length('"ref"=>"')),'"')
-)
-else ''
-end
-```
-
--> vervang &quot;ref&quot; door de gewenste andere tag, vb: &quot;maxspeed&quot;
 
 ## 3/ gegevens stijlen
 
